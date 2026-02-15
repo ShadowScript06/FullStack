@@ -1,0 +1,66 @@
+/* Reset (optional but good habit) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Just to give space */
+body {
+  height: 200vh; /* helps when you test fixed/sticky */
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+/* Common Box Style */
+.box {
+  width: 150px;
+  height: 150px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Individual Colors */
+.box-red {
+  background-color: #e74c3c;
+  height: 100px;
+  width: 100px;
+}
+
+.box-blue {
+  background-color: #3498db;
+  height: 100px;
+  width: 100px;
+  position: relative;
+  top:50px;
+  left: 50px;
+}
+
+.box-green {
+  background-color: #2ecc71;
+  height: 100px;
+  width: 100px;
+  position: fixed;
+  left:200px;
+  top: 200px;
+}
+
+.box-yellow {
+  background-color: #f1c40f;
+  color: black;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top:50px;
+  left:50px;
+}
+
+.parent{
+  position: relative;
+  border: 2px solid black;
+}
