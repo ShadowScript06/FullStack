@@ -1,0 +1,343 @@
+/* reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+
+.header {
+  width: 100%;
+  background: #111;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #0752a7;
+}
+
+.logo-container a {
+  text-decoration: none;
+}
+
+.logo-start {
+  color: aquamarine;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo-end {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.right-container {
+  display: flex;
+  gap: 15px;
+}
+
+#search-toggle,
+#hamburger {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  background: #1a1a1a;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-menu.active {
+  max-height: 300px;
+}
+
+.mobile-menu ul {
+  list-style: none;
+}
+
+.mobile-menu li {
+  border-top: 1px solid #2a2a2a;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+.mobile-menu a:hover {
+  background: #222;
+}
+
+.search-container {
+  display: flex;
+
+  gap: 4px;
+  background: #1a1a1a;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+  padding: 0 20px;
+  align-items: center;
+}
+
+.search-container.active {
+  max-height: 120px;
+  padding: 15px 20px;
+}
+
+.search-input {
+  flex: 0 0 80%;
+  padding: 10px;
+
+  border: none;
+  border-radius: 4px;
+  font-style: 14px;
+}
+
+.search-btn {
+  flex: 0 0 20%;
+  padding: 10px;
+  background: #ff4747;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.desktop-search-container {
+  display: none;
+}
+
+.desktop-navbar {
+  display: none;
+}
+
+/* Match Card */
+.match-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.match-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Header */
+.match-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.match-type {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.match-status {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.match-status.completed {
+  background: #eaeaea;
+  color: #444;
+}
+
+/* Teams */
+.team {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.team-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-left img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.team-name {
+  font-weight: 600;
+}
+
+.team-score {
+  font-weight: 600;
+  color: #222;
+}
+
+/* Footer */
+.match-footer {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #555;
+}
+
+.match-footer p{
+    color: red;
+}
+.match-container {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  will-change: transform;
+  gap: 8px;
+  padding: 8px;
+  justify-content: center;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+  
+}
+
+
+
+/* 1 card visible on mobile */
+.match-card {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+/* Hide arrows on mobile */
+.carousel-btn {
+  display: none;
+}
+
+/* Hide arrows on mobile */
+.carousel-btn {
+  display: none;
+}
+
+.match-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+.match-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.match-container {
+  display: flex;
+  gap: 16px;
+  padding: 10px;
+}
+
+.match-card {
+  min-width: 260px;
+  flex-shrink: 0;
+}
+
+
+#search-instruction{
+    color: aquamarine;
+    text-align: center;
+}
+@media (min-width: 768px) {
+  .desktop-search-container {
+    display: flex;
+    background-color: white;
+    border-radius: 16px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .desktop-search-container input {
+    padding: 8px;
+    outline: none;
+    border: none;
+    width: 300px;
+    border-radius: 16px;
+  }
+
+  .desktop-search-container button {
+    background: white;
+    border: none;
+
+    cursor: pointer;
+    border-radius: 16px;
+  }
+  .search-icon {
+    height: 16px;
+    color: gray;
+    width: 16px;
+    margin-right: 8px;
+  }
+
+  .search-container, .mobile-menu{
+    display: none;
+  }
+  .desktop-navbar {
+    display: block;
+  }
+  .desktop-navlist {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+  }
+  .desktop-navlist li {
+    color: white;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+  }
+
+  .desktop-navlist li:hover {
+    color: aquamarine;
+  }
+
+  .desktop-navlist a {
+    text-decoration: none; /* removes underline */
+    color: inherit; /* uses parent color */
+  }
+
+  #search-toggle,
+  #hamburger {
+    display: none;
+  }
+
+  .match-card {
+    flex: 0 0 33.3333%;
+  }
+
+  
+}
