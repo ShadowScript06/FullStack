@@ -133,7 +133,7 @@ function generateCard(match) {
 // Fetching Data from api
 async function getData() {
   const response = await fetch(
-    "https://api.cricapi.com/v1/currentMatches?apikey=YOUR_KEY&offset=0",
+    "https://api.cricapi.com/v1/currentMatches?apikey=dd2b7775-7d31-422b-b517-bc00164e9219&offset=0",
   );
 
   const data = await response.json();
