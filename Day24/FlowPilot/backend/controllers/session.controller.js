@@ -93,7 +93,7 @@ async function getSessions(req,res,next){
 
         res.status(200).json({
             success:true,
-            data:sessions
+            sessions
         });
 
     }catch(err){

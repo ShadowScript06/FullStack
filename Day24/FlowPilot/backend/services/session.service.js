@@ -132,7 +132,18 @@ async function getSessionById(userId, sessionId) {
   return session;
 }
 
+
+
+
+/**
+ * Get aggregated session stats for a user
+ * @param {string} userId
+ */
 async function getSessionStats(userId) {
+  if (!mongoose.Types.ObjectId.isValid(userId)) {
+    throw new Error("Invalid userId");
+  }
+
   const stats = await Session.aggregate([
     {
       $match: {
@@ -142,45 +153,47 @@ async function getSessionStats(userId) {
     },
     {
       $project: {
+        // focusDuration = plannedDuration - totalPausedDuration
         focusDuration: {
           $subtract: [
-            { $subtract: ["$completedAt", "$startedAt"] },
-            "$totalPausedDuration",
+            { $ifNull: ["$plannedDuration", 0] },
+            { $ifNull: ["$totalPausedDuration", 0] },
           ],
         },
         interruptions: {
-          $cond: [{ $gt: ["$totalPausedDuration", 0] }, 1, 0],
+          $cond: [{ $gt: [{ $ifNull: ["$totalPausedDuration", 0] }, 0] }, 1, 0],
         },
       },
     },
     {
       $group: {
         _id: null,
-        totalFocusTime: {
-          $sum: "$focusDuration",
-        },
-        completeSession: {
-          $sum: 1,
-        },
-        totalInterruptions: {
-          $sum: "$interruptions",
-        },
-        avgSessionLength: {
-          $avg: "$focusDuration",
-        },
+        totalFocusTime: { $sum: "$focusDuration" },
+        completeSession: { $sum: 1 },
+        totalInterruptions: { $sum: "$interruptions" },
+        avgSessionLength: { $avg: "$focusDuration" },
       },
     },
   ]);
 
-  return (
-    stats[0] || {
-      totalFocusTime: 0,
-      completeSession: 0,
-      totalInterruptions: 0,
-      avgSessionLength: 0,
-    }
-  );
+  const result = stats[0] || {
+    totalFocusTime: 0,
+    completeSession: 0,
+    totalInterruptions: 0,
+    avgSessionLength: 0,
+  };
+
+  return {
+    totalFocusTime: result.totalFocusTime, // already in same unit as plannedDuration
+    avgSessionLength: result.avgSessionLength,
+    totalInterruptions: result.totalInterruptions,
+    completeSession: result.completeSession,
+  };
 }
+
+
+
+
 module.exports = {
   createSession,
   startSession,

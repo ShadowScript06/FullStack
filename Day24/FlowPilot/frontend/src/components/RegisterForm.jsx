@@ -19,7 +19,7 @@ export default function RegisterForm({ setPage }) {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/auth/register",
+        "https://flowpilot-ejd6.onrender.com/auth/register",
         {
           name,
           email,

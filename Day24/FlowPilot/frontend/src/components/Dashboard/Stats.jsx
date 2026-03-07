@@ -19,7 +19,7 @@ const Stats = () => {
   ];
 
   useEffect(()=>{
-    axios.get("http://localhost:5000/session/stats",{withCredentials:true}).then((res)=>{
+    axios.get("https://flowpilot-ejd6.onrender.com/session/stats",{withCredentials:true}).then((res)=>{
         const data=res.data.data;
         if(res.data.success){
         setTotalFocusedTime(data.totalFocusTime);

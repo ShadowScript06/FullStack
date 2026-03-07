@@ -11,7 +11,7 @@ function AuthProtectedWrapper({ children }) {
   
   async function checkAuth() {
     try {
-       const res=await axios.get("http://localhost:5000/auth/me", {
+       const res=await axios.get("https://flowpilot-ejd6.onrender.com/auth/me", {
         withCredentials: true,
       });
       dispatch(setName(res.data.user));

@@ -12,7 +12,7 @@ function Navbar() {
     e.preventDefault();
     try {
       await axios.post(
-        "http://localhost:5000/auth/logout",
+        "https://flowpilot-ejd6.onrender.com/auth/logout",
         {},
         { withCredentials: true },
       );

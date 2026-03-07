@@ -19,7 +19,10 @@ const sessionRouter=require('./routes/session.routes');
 const app=express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "https://flow-pilot-theta.vercel.app", // your frontend domain
+  credentials: true // allow cookies
+}));
 app.use(morgan("dev"));
 app.use(cookieParser());
 app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));

@@ -13,7 +13,7 @@ const CreateSessionModal = ({ isOpen, onClose, onAdd }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/session",
+        "https://flowpilot-ejd6.onrender.com/session",
         {
           title,
           plannedDuration: parseInt(duration),

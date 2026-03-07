@@ -19,7 +19,7 @@ function Dashboard() {
   const [sessions, setSessions] = useState([]);
 
  useEffect(()=>{
-    axios.get("http://localhost:5000/session",{withCredentials:true}).then((res)=>{
+    axios.get("https://flowpilot-ejd6.onrender.com/session",{withCredentials:true}).then((res)=>{
         if(res.data.success){
             setSessions(res.data.sessions)
         }

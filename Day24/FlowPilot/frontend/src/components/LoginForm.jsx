@@ -21,7 +21,7 @@ export default function LoginForm({ setPage }) {
     try {
       e.preventDefault();
       const response = await axios.post(
-        "http://localhost:5000/auth/login",
+        "https://flowpilot-ejd6.onrender.com/auth/login",
         {
           email,
           password,

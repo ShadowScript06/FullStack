@@ -16,7 +16,7 @@ const SessionCard = ({ title, plannedDuration, sessionId, sessionStatus }) => {
   const handleStart = async () => {
     try {
       const res = await axios.post(
-        `http://localhost:5000/session/${sessionId}/start`,
+        `https://flowpilot-ejd6.onrender.com/session/${sessionId}/start`,
         {},
         { withCredentials: true }
       );
@@ -31,7 +31,7 @@ const SessionCard = ({ title, plannedDuration, sessionId, sessionStatus }) => {
     const action = isPaused ? "resume" : "pause";
     try {
       const res = await axios.post(
-        `http://localhost:5000/session/${sessionId}/${action}`,
+        `https://flowpilot-ejd6.onrender.com/session/${sessionId}/${action}`,
         {},
         { withCredentials: true }
       );
@@ -48,7 +48,7 @@ const SessionCard = ({ title, plannedDuration, sessionId, sessionStatus }) => {
   const handleComplete = async () => {
     try {
       const res = await axios.post(
-        `http://localhost:5000/session/${sessionId}/complete`,
+        `https://flowpilot-ejd6.onrender.com/session/${sessionId}/complete`,
         {},
         { withCredentials: true }
       );
