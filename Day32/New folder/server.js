@@ -1,13 +1,17 @@
 const express=require("express");
 
 const app=express();
+const cors=require("cors");
+
 
 app.use(express.json());
-
+app.use(cors());
 
 const queue=require("./queue");
 const pubsub=require("./pubsub");
 const notificationService=require("./ssc");
+
+
 
 
 

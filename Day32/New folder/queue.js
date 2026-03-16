@@ -20,4 +20,4 @@ class Queue {
 
 const queue=new Queue();
 
-module .exports =queue;
+module.exports =queue;

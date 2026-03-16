@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Notifications</h3>
+
+<script>
+const source = new EventSource("http://localhost:5000/events");
+
+source.onmessage = (event) => {
+  console.log("Notification:", event.data);
+};
+</script>
+
+</body>
+</html>
