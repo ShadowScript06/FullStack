@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "mongoose": "^9.3.0",
+    "uuid": "^13.0.0"
+  }
+}
