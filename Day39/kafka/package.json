@@ -1,0 +1,25 @@
+{
+  "name": "kafka",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+     "admin": "ts-node src/admin.ts",
+  "producer": "ts-node src/producer.ts",
+  "consumer:1": "ts-node src/consumer.ts consumer-1",
+  "consumer:2": "ts-node src/consumer.ts consumer-2",
+  "consumer:3": "ts-node src/consumer.ts consumer-3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "kafkajs": "^2.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

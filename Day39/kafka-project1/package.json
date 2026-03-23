@@ -1,0 +1,27 @@
+{
+  "name": "kafka-project1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "admin": "ts-node src/admin.ts",
+    "order-service": "ts-node src/services/order-service/server.ts",
+    "payment-service": "ts-node src/services/payment-service/service.ts",
+    "notification-service": "ts-node src/services/notification-service/service.ts",
+     "dlq-monitor": "ts-node src/services/payment-service/dlq-monitor.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "kafkajs": "^2.2.4"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
